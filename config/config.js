@@ -4,7 +4,7 @@ var config = {
   //Database Credentials
   mongo: {
     db: "sscExam",
-    password: '' // create your own mongo db config
+    password: '22SWDfs0c7QPoEWy' // create your own mongo db config
   },
   secretKey: "*&^sdfjhd345dfg*&%^3",
 
@@ -20,5 +20,6 @@ var config = {
 };
 
 //Production
-config.mongo.url = `mongodb+srv://RestAppShop:${config.mongo.password}@sscexam.dkapt.mongodb.net/${config.mongo.db}?retryWrites=true&w=majority`;
+// config.mongo.url = `mongodb+srv://RestAppShop:${config.mongo.password}@sscexam.dkapt.mongodb.net/${config.mongo.db}?retryWrites=true&w=majority`;
+config.mongo.url = `mongodb+srv://tigerkiller007:${config.mongo.password}@cluster0.dgevg.mongodb.net/`;
 module.exports = config;

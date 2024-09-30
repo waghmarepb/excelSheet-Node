@@ -62,20 +62,16 @@ var server = app.listen(app.get('port'), function () {
 
 
 // Database Connection
-mongoose.connect(config.mongo.url, {
-  useNewUrlParser: true,
-  useCreateIndex: true
-}, function (err, database) {
-  if (err) {
-    console.log(err);
-    process.exit(1);
+// Database Connection
+async function connectToDatabase() {
+  try {
+    await mongoose.connect(config.mongo.url);
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error);
   }
+}
 
-  // Save database object from the callback for reuse.
-  db = database;
-  console.log("Database connection ready");
-
-});
-
+connectToDatabase();
 /************************* END Server & DB Connection **********************************************/
 /***************************************************************************************************/
